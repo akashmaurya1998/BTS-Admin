@@ -86,8 +86,6 @@ public class AddBus extends AppCompatActivity implements DatePickerDialog.OnDate
                 AB_Busnoedt.setText("");
                 AB_BusStartTime.setText("Departure Time");
                 AB_BusEndTime.setText("Arrival Time");
-
-
             }
         });
 
@@ -142,17 +140,10 @@ public class AddBus extends AppCompatActivity implements DatePickerDialog.OnDate
                 IDs iD = iDs.get(position);
                 ST_AB_BusPinEnd = iD.getLocation_pin();
                 TV_AB_BusPinEnd.setText(ST_AB_BusPinEnd);
-
-
-
-
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
-
-
             }
         });
 
@@ -187,7 +178,7 @@ public class AddBus extends AppCompatActivity implements DatePickerDialog.OnDate
 
         Initilizer_PD = new ProgressDialog(this);
         Initilizer_PD.setTitle("Connecting to database");
-        Initilizer_PD.show();
+//        Initilizer_PD.show();
 
         sendindData = new ProgressDialog(this);
         sendindData.setTitle("Saving data to database");
@@ -243,7 +234,6 @@ public class AddBus extends AppCompatActivity implements DatePickerDialog.OnDate
             public void onClick(View v) {
                 ChooseStarttime = false;
                 Selecttime();
-
             }
         });
 

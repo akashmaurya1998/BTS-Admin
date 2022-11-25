@@ -3,6 +3,7 @@ package com.example.murariadminapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -81,17 +82,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         databaseName.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Name = dataSnapshot.child("Name").getValue().toString();
-                adminName.setText(Name);
-                progressDialog.dismiss();
-                Toast.makeText(MainActivity.this,Name,Toast.LENGTH_SHORT).show();
-
-
+                try {
+                    Name = dataSnapshot.child("Name").getValue().toString();
+                    adminName.setText(Name);
+                    progressDialog.dismiss();
+                    Toast.makeText(MainActivity.this,Name,Toast.LENGTH_SHORT).show();
+                } catch (Exception ex) {
+                    Toast.makeText(MainActivity.this, ex.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                progressDialog.dismiss();
+                Toast.makeText(MainActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         State = parent.getItemAtPosition(position).toString();
+        if (!(position == 0))
         Toast.makeText(MainActivity.this,State,Toast.LENGTH_LONG).show();
 
     }
@@ -120,10 +126,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 removeedt();
                 Intent in = new Intent(MainActivity.this,AddBus.class);
                 startActivity(in);
-
-
-
-
             }
         });
 
@@ -146,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     progresslocation.setCancelable(false);
                     progresslocation.show();
                     SetLocation(Location,PinCode,State);
+                    progresslocation.hide();
                 }else {
                     Toast.makeText(MainActivity.this,"Please fill each box",Toast.LENGTH_SHORT).show();
                 }

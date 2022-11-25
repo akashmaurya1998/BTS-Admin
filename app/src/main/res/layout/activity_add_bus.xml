@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="30dp"
-        android:textStyle="italic" />
+         />
 
 
 

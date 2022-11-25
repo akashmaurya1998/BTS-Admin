@@ -19,7 +19,6 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        android:textStyle="italic"
 
         />
 
@@ -31,17 +30,18 @@
         android:layout_below="@+id/MN_AddLocationbtn"
         android:layout_alignRight="@+id/MN_AddBus"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="-194dp"
         android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/MN_AddBus"
         android:background="@drawable/button_black"
         android:paddingLeft="20dp"
         android:text="See Tickets"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        android:textStyle="italic" />
+        android:textSize="15sp" />
 
     <EditText
         android:paddingLeft="22dp"
@@ -56,7 +56,7 @@
         android:textColorHint="#03A9F4"
         android:textSize="25dp"
         android:hint="Add locality"
-        android:textStyle="italic"
+
         />
 
 
@@ -75,7 +75,7 @@
         android:textSize="25dp"
         android:hint="locality Pin no."
         android:inputType="number"
-        android:textStyle="italic"
+
         app:met_mask="######"
         />
 
@@ -97,7 +97,7 @@
         android:textColor="#03A9F4"
         android:textColorHint="#03A9F4"
         android:textSize="55dp"
-        android:textStyle="italic"
+
         />
 
 
@@ -114,7 +114,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
-        android:textStyle="italic" />
+         />
 
 
     <Button
@@ -130,8 +130,7 @@
         android:text="Add Bus"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        android:textStyle="italic" />
+        android:textSize="15sp" />
 
 
 </RelativeLayout>
