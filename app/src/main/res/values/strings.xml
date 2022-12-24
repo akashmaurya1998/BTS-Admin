@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">MurariAdinApp</string>
+    <string name="app_name">BTS Admin</string>
+    <string name="states_url">https://api.countrystatecity.in/v1/countries/IN/states</string>
+    <string name="states_array" />
+    <string name="header_key_for_states_api">X-CSCAPI-KEY</string>
+    <string name="header_value_for_states_api">dUhuVUNoU0QzSzNKVG1RSWw4Q2djOXEyQmFEcWRnZHZYV09sYXdPcw==</string>
     <string-array name="BusType">
         <item>A/C Seater (2+2)</item>
         <item>NON A/C Seater (2+1)</item>

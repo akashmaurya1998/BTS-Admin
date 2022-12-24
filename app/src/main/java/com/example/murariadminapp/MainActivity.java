@@ -3,7 +3,6 @@ package com.example.murariadminapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.murariadminapp.Model.States;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         //So first I created an array of data.
-        String[] State = new String[]{"","Bihar","Jharkhand","Orissa"};
+        String[] State = new States().states;
         //State_instance_Spinner is instance used in Initilize method.
         State_instance_Spinner =  findViewById(R.id.MN_LocationStateedt);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_spinner_item,State);
@@ -101,8 +101,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
 
     }
-
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
